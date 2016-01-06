@@ -7,14 +7,17 @@ A multithreaded Python script that will download all photos from a public Instag
 #### Usage
 1. Extract the three files into one folder for easier use.
 2. From the command line, go to above_folder/src. **Example:**
+
 ```sh
 cd desktop/instagram_downloader/src
 ````
+
 3. Run the following command, replacing username with the Instagram username to download from
 
 ```sh
 python instagram_downloader.py username
 ````
+
 4. Photos are saved to above_folder/photos/**username**
 
 #### Dependencies
