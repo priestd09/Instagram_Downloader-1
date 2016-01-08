@@ -4,6 +4,7 @@ from datetime import timedelta
 
 
 class ProgressBar:
+
     """
     Instantiate a progress bar. It assumes values from 0 to end_value - 1.
     Usage:
@@ -49,7 +50,8 @@ class ProgressBar:
         # Start displaying the bar
         if self.count:
             sys.stdout.write("\r{0} ({4:>{5}}/{3}): [{1}] {2}%".format(self.text,
-                                                                       ' ' * self.bar_length,
+                                                                       ' ' *
+                                                                       self.bar_length,
                                                                        0,
                                                                        self.end_value,
                                                                        0,
@@ -72,8 +74,10 @@ class ProgressBar:
             spaces = ' ' * (self.bar_length - len(hashes))
             if self.count:
                 sys.stdout.write("\r{0} ({4:>{5}}/{3}): [{1}] {2}%".format(self.text,
-                                                                           hashes + spaces,
-                                                                           int(round(percent * 100)),
+                                                                           hashes +
+                                                                           spaces,
+                                                                           int(round(
+                                                                               percent * 100)),
                                                                            self.end_value,
                                                                            self.current,
                                                                            len(str(self.end_value))))
@@ -83,12 +87,14 @@ class ProgressBar:
                                                             int(round(percent * 100))))
             sys.stdout.flush()
             if self.current == self.end_value:
-                elapsed_time = timedelta(seconds=(int(time.time()) - self.start_time))
+                elapsed_time = timedelta(
+                    seconds=(int(time.time()) - self.start_time))
                 sys.stdout.write(" Elapsed time: %s\n" % elapsed_time)
 
 
 def progress_bar_test(end_value, text, bar_length, count):
-    bar = ProgressBar(end_value=end_value, text=text, count=count, bar_length=bar_length)
+    bar = ProgressBar(
+        end_value=end_value, text=text, count=count, bar_length=bar_length)
     bar.start()
     for i in range(0, end_value):
         time.sleep(1)
